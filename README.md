@@ -1,5 +1,5 @@
-# Perm2c-AA
-####  Perm2b-Algebra Abstracta
+# Perm2c
+####  Perm2c-Algebra Abstracta
 
 **Integrantes**
 
