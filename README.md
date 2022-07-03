@@ -12,7 +12,10 @@
 #### 1 .(5 points) Si m es el mensaje y c es el cifrado (ambos representados por un entero). Y además, la clave pública es P ={e,n}(en ese orden). Hallar m cuando:
 
 P = {65537;999630013489} y c=747120213790
-   
+
+El siguiente algoritmo encuentra tres números primos que multiplicados me dan n, todo acumulada en una lista.
+El (for i=3) recorre todos los números impares comenzando del 3 hasta encontrar el primer número que divide a “n” ya a la vez es primo, el while se detendrá cuando “n” entre “i” sea primo.
+
 ```
 n=99630013489
 aux=99630013489
@@ -34,3 +37,7 @@ while (True):
     aux=h
 
 ```
+#### *Output:*
+
+
+
