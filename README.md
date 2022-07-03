@@ -43,5 +43,6 @@ while (True):
 ```
 [41, 109, 22293581]
 ```
+Como se ve nos dio tres números primos que multiplicados me dan n, todo esto con la finalidad de hallar phi(n) y “d”. 
 
 
