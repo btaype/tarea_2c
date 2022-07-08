@@ -65,8 +65,8 @@ def inverso(a,n):
   else:
     return "No tiene inverso"
 
-n=99630013489
-aux=99630013489
+n=999630013489
+aux=999630013489
 e=65537
 c =747120213790
 
