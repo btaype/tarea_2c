@@ -227,5 +227,12 @@ OB = IntToString(c)
 print("\"m\" original: ", m % rsa.n)    # "m" original aplicando modulo para normalizar tanto la original como la "m" recuperada
 print("Firma digital:", OB)
 print("\"m\" recuperada: ", rsa.Cifrado(c))
+```
 
+#### *Output:*
+
+```
+"m" original:  1481651286
+Firma digital: 76cda0f1
+"m" recuperada:  1481651286
 ```
