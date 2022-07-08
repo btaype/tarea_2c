@@ -191,40 +191,37 @@ for i in range(3):
 Utilizar el algoritmo RSA (b = 32) para generar y validar una firma digital. Utilizar el estándar PKCS 1 v1.5 para añadir un padding al mensaje original. Fecha límite de entrega: 08/07/22.
 
 ```
-import hashlib, sys
+h=hashlib.sha1()  
+e,d,n=RSA(32)
+print("e:",e)
+print("d:",d)
+print("n:",n)
+palabra=[]
 
-def gen_EB(M, bits):
-  H = hashlib.sha1(bytes(M, encoding="utf-8")).hexdigest()
-  PS = "F" * (bits - sys.getsizeof(H) - 3)
-  T = hex(RANDOMGEN_PRIMOS(bits, 100))[2:] + H
-  return "0001" + PS + "00" + T
+h = hashlib.sha1(bytes("Hola Mundo", encoding="utf-8")).hexdigest()
+palabra.append(h)
 
+palabras=["Hola Mundo"]
+t="3021300906052B0E03021A05000414"
 
-def StringToInt(EB):
-  return int(EB, base=16)
+for i in range(len(palabra)):
+    oi=32-sys.getsizeof(palabra[i])-3
+    f="f"*oi
+    palabra[i]="0002"+f+"00"+t+palabra[i]
+   
 
-
-def IntToString(c):
-  return hex(c)[2:]
-
-
-bits = 32
-rsa = RSA(bits)
-
-EB = gen_EB("Hola mundo", bits)
-m = StringToInt(EB)
-c = rsa.Descifrado(m)  # m^d mod n
-OB = IntToString(c)
-
-print("\"m\" original: ", m % rsa.n)    # "m" original aplicando modulo para normalizar tanto la original como la "m" recuperada
-print("Firma digital:", OB)
-print("\"m\" recuperada: ", rsa.Cifrado(c))
+        
+m=int(palabra[0],16)
+m=m%n
+phi = EXPMOD(m, d, n)
+m_i = EXPMOD(phi, e, n)
 ```
 
 #### *Output:*
 
 ```
-"m" original:  1481651286
-Firma digital: 76cda0f1
-"m" recuperada:  1481651286
+m:  212757780
+phi=m^d mod n:  657889092
+firma:  27369744
+m'=phi^e mod n:   212757780
 ```
