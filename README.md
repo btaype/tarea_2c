@@ -193,10 +193,10 @@ for i in range(3):
 ```
 
 
-#### 3.(8 points) Validar firmas digitales: Verificar que P(S(m)) = HASH(M) para 3 mensajes distintos, mostrando la respectiva firma σ en cada caso. Utilice la Función Hash SHA-1 para generar m a trav´es de un texto M ( por ejemplo Hola Mundo). Utilizar b = 32 bits en el algoritmo RSA.
+#### Punto adicional para el Examen Final:
 
 
-hallamos d y n con el algoritmo RSA de 32 bits, elegimos 3 textos y de cada uno hallaremos su hash SHA-1 y lo convertiremos a hexadecimal para luego volver a convertirlo a decimal que tomara el valor de m, como m>n hallaremos el m mod n para no tener inconvenientes a la hora de hallar S(m)=phi que sera la firma y luego para verificar aplicamos p(phi)=phi**e mod n que tendra que ser mismo valor de m.
+Utilizar el algoritmo RSA (b = 32) para generar y validar una firma digital. Utilizar el estándar PKCS 1 v1.5 para añadir un padding al mensaje original. Fecha límite de entrega: 08/07/22.
 
 ```
 import hashlib, sys
@@ -229,6 +229,3 @@ print("Firma digital:", OB)
 print("\"m\" recuperada: ", rsa.Cifrado(c))
 
 ```
-
-
-
