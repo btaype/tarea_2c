@@ -96,7 +96,7 @@ comprobar:  18649707670
 ```
 COMPROBAMOS c**d mod n = m, con el "d" que hallamos si nos retorna el mismo valor de m
 
-#### 2. 7 points) Si m es el mensaje y c es el cifrado (ambos representados por un entero). Y además, la clave pública es P = {e, n} (en ese orden). Hallar m cuando:
+#### 2. (7 points) Si m es el mensaje y c es el cifrado (ambos representados por un entero). Y además, la clave pública es P = {e, n} (en ese orden). Hallar m cuando:
 
 P ={7, 357942341797258687749918078325684554030037780242282261
 93532908190484670252364677411513516111204504060317568667}
