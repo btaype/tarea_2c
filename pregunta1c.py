@@ -49,7 +49,7 @@ def e_euclides(a,b):
       return a,1,0
     d,x1,y1 = e_euclides(b, a % b)
     x = y1
-    y = x1 - y1 * (a / b)
+    y = x1 - y1 *int(a / b)
     return d,x,y
 def PHI(n):
     r = 0
