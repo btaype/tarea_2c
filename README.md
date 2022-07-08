@@ -193,5 +193,42 @@ for i in range(3):
 ```
 
 
+#### 3.(8 points) Validar firmas digitales: Verificar que P(S(m)) = HASH(M) para 3 mensajes distintos, mostrando la respectiva firma σ en cada caso. Utilice la Función Hash SHA-1 para generar m a trav´es de un texto M ( por ejemplo Hola Mundo). Utilizar b = 32 bits en el algoritmo RSA.
+
+
+hallamos d y n con el algoritmo RSA de 32 bits, elegimos 3 textos y de cada uno hallaremos su hash SHA-1 y lo convertiremos a hexadecimal para luego volver a convertirlo a decimal que tomara el valor de m, como m>n hallaremos el m mod n para no tener inconvenientes a la hora de hallar S(m)=phi que sera la firma y luego para verificar aplicamos p(phi)=phi**e mod n que tendra que ser mismo valor de m.
+
+```
+import hashlib, sys
+
+def gen_EB(M, bits):
+  H = hashlib.sha1(bytes(M, encoding="utf-8")).hexdigest()
+  PS = "F" * (bits - sys.getsizeof(H) - 3)
+  T = hex(RANDOMGEN_PRIMOS(bits, 100))[2:] + H
+  return "0001" + PS + "00" + T
+
+
+def StringToInt(EB):
+  return int(EB, base=16)
+
+
+def IntToString(c):
+  return hex(c)[2:]
+
+
+bits = 32
+rsa = RSA(bits)
+
+EB = gen_EB("Hola mundo", bits)
+m = StringToInt(EB)
+c = rsa.Descifrado(m)  # m^d mod n
+OB = IntToString(c)
+
+print("\"m\" original: ", m % rsa.n)    # "m" original aplicando modulo para normalizar tanto la original como la "m" recuperada
+print("Firma digital:", OB)
+print("\"m\" recuperada: ", rsa.Cifrado(c))
+
+```
+
 
 
