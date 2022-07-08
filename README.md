@@ -56,8 +56,8 @@ d=inverso(e,phi)
 ```
 #### *Output:*
 ```
-phi:  96308265600
-d:  64030147073
+phi:  999628013860
+d:  755383642193
 ```
 
 Buscamos un numero "X"que se encuentre en el rango de 0 hasta n-1 y a la vez x tiene que ser coprimo con n, a continuacion hallamos un c' que es la multiplicacion de 
